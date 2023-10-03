@@ -1,0 +1,24 @@
+{
+  "name": "squabble-sesh",
+  "version": "1.0.0",
+  "description": "Squabble Sesh is a social media application for posting hot takes.",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "server.js --ignore client",
+    "develop": "concurrently \"cd server && npm run start\" \"cd client && npm run dev\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "seed": "cd server && npm run seed",
+    "build": "cd client && npm run build"
+  },
+  "keywords": [],
+  "authors": [
+    "Nick Stypinski",
+    "Molly Snyder",
+    "Michael Phillips",
+    "Derek Meduri"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.1"
+  }
+}
