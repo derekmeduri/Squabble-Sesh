@@ -1,10 +1,11 @@
 const typeDefs = `
   type Profile {
     _id: ID
-    name: String
+    firstName: String
+    lastName: String
+    username: String
     email: String
     password: String
-    skills: [String]!
   }
 
   type Auth {
@@ -23,9 +24,7 @@ const typeDefs = `
     addProfile(name: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
 
-    addSkill(profileId: ID!, skill: String!): Profile
-    removeProfile: Profile
-    removeSkill(skill: String!): Profile
+    
   }
 `;
 
