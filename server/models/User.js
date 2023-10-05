@@ -39,6 +39,14 @@ const userSchema = new Schema({
     type: Array,
     default: [],
   },
+  hotTakes: {
+    type: String,
+    required: true,
+  },
+  bio: {
+    type: String,
+    required: true,
+  },
 });
 
 const User = model("User", userSchema);
