@@ -8,8 +8,7 @@ export const LOGIN = gql`
         _id
       }
     }
-  }
-`;
+  }`;
 
 export const ADD_USER = gql`
   mutation addUser(
@@ -17,10 +16,10 @@ export const ADD_USER = gql`
     $firstName: String!
     $lastName: String!
     $hottake: String!
-    $bio: Sring!
+    $bio: String!
     $email: String!
     $password: String!
-    $fighterId: int!
+    $fighterInput: [fighterInput]
 
   ) {
     addUser(
@@ -39,8 +38,7 @@ export const ADD_USER = gql`
         _id
       }
     }
-  }
-`;
+  }`;
 
 export const NEW_POST = gql `
 mutation newPost ($postId: ID!, $postText: String!) {
@@ -51,10 +49,28 @@ mutation newPost ($postId: ID!, $postText: String!) {
         createdAt
         comments {
             _id
+            username
             commentText
             createdAt
         }
 
     }
-}
-`;
+}`;
+
+export const EDIT_POST = gql ``
+
+export const DELETE_POST = gql ``
+
+export const NEW_COMMENT = gql `
+mutation newComment ($commentId: ID!, $commentText: String!) {
+  newComment(commentId: $commentId, commentText: $commentText) {
+    _id
+    username
+    commentText
+    createdAt
+  }
+}`;
+
+export const EDIT_COMMENT = gql ``
+
+export const DELETE_COMMENT = gql ``
