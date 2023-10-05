@@ -1,0 +1,16 @@
+:root {
+    --purple: #67399B;
+    --red: #E33B40;
+    --orange: #F8712E;
+    --yellow: #F9DB0E;
+    --blue: #48B7CD;
+    --black: black;
+    --white: white;
+  }
+
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+  }
