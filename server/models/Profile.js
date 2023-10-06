@@ -38,9 +38,25 @@ const profileSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  fighterimage: {
-    image: [FighterImage],
-  }
+
+  friends: {
+    type: Array,
+    default: [],
+  },
+  hotTakes: {
+    type: String,
+    required: true,
+  },
+  bio: {
+    type: String,
+    required: true,
+  },
+//   fighterInput: {
+//     //type: Image,
+//     //image: [FighterImage],
+//     required: true,
+//   },
+
 });
 
 // set up pre-save middleware to create password
