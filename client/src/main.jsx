@@ -1,7 +1,6 @@
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom/dist';
 import './index.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 import App from './App.jsx';
 import Landing from './pages/Landing';
@@ -21,10 +20,10 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Home />
-      }, {
-        path: '/landing',
         element: <Landing />
+      }, {
+        path: '/home',
+        element: <Home />
       },{
         path: '/login',
         element: <Login />
