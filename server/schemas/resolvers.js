@@ -1,56 +1,92 @@
-const { Profile } = require('../models');
-const { signToken, AuthenticationError } = require('../utils/auth');
+const { User, Squabble } = require("../models");
+const { signToken, AuthenticationError } = require("../utils/auth");
 
 const resolvers = {
   Query: {
-    profiles: async () => {
-      return Profile.find();
+    users: async () => {
+      return User.find().populate("squabbles");
     },
-
-    profile: async (parent, { profileId }) => {
-      return Profile.findOne({ _id: profileId });
+    user: async (parent, { username }) => {
+      return User.findOne({ username }).populate("squabbles");
     },
-    // By adding context to our query, we can retrieve the logged in user without specifically searching for them
+    squabbles: async (parent, { username }) => {
+      const params = username ? { username } : {};
+      return Squabble.find(params).sort({ createdAt: -1 });
+    },
+    squabble: async (parent, { squabbleId }) => {
+      return Squabble.findOne({ _id: squabbleId });
+    },
+    // we can retrieve the logged in user without specifically searching for them
     me: async (parent, args, context) => {
       if (context.user) {
-        return Profile.findOne({ _id: context.user._id });
+        return User.findOne({ _id: context.user._id }).populate("squabbles");
       }
       throw AuthenticationError;
     },
   },
 
   Mutation: {
-    addProfile: async (parent, { username, firstName, lastName, hottake, bio, email, password, fighterInput }) => {
-      const profile = await Profile.create({ name, email, password });
-      const token = signToken(profile);
-
-      return { token, profile };
+    addUser: async (
+      parent,
+      { firstName, lastName, username, email, password }
+    ) => {
+      const user = await User.create({
+        firstName,
+        lastName,
+        username,
+        email,
+        password,
+      });
+      const token = signToken(user);
+      return { token, user };
     },
     login: async (parent, { email, password }) => {
-      const profile = await Profile.findOne({ email });
+      const user = await User.findOne({ email });
 
-      if (!profile) {
+      if (!user) {
         throw AuthenticationError;
       }
 
-      const correctPw = await profile.isCorrectPassword(password);
+      const correctPw = await user.isCorrectPassword(password);
 
       if (!correctPw) {
         throw AuthenticationError;
       }
 
-      const token = signToken(profile);
-      return { token, profile };
-    },
+      const token = signToken(user);
 
-    // Add a third argument to the resolver to access data in our `context`
-    addSkill: async (parent, { profileId, skill }, context) => {
-      // If context has a `user` property, that means the user executing this mutation has a valid JWT and is logged in
+      return { token, user };
+    },
+    removeUser: async (parent, args, context) => {
       if (context.user) {
-        return Profile.findOneAndUpdate(
-          { _id: profileId },
+        return User.findOneAndDelete({ _id: context.user._id });
+      }
+      throw AuthenticationError;
+    },
+    addSquabble: async (parent, { squabbleText }, context) => {
+      if (context.user) {
+        const squabble = await Thought.create({
+          squabbleText,
+          squabbleAuthor: context.user.username,
+        });
+
+        await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { squabble: squabble._id } }
+        );
+
+        return squabble;
+      }
+      throw AuthenticationError;
+    },
+    addComment: async (parent, { squabbleId, commentText }, context) => {
+      if (context.user) {
+        return Squabble.findOneAndUpdate(
+          { _id: squabbleId },
           {
-            $addToSet: { skills: skill },
+            $addToSet: {
+              comments: { commentText, commentAuthor: context.user.username },
+            },
           },
           {
             new: true,
@@ -58,22 +94,36 @@ const resolvers = {
           }
         );
       }
-      // If user attempts to execute this mutation and isn't logged in, throw an error
       throw AuthenticationError;
     },
-    // Set up mutation so a logged in user can only remove their profile and no one else's
-    removeProfile: async (parent, args, context) => {
+    removeSquabble: async (parent, { squabbleId }, context) => {
       if (context.user) {
-        return Profile.findOneAndDelete({ _id: context.user._id });
+        const squabble = await Squabble.findOneAndDelete({
+          _id: squabbleId,
+          squabbleAuthor: context.user.username,
+        });
+
+        await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { squabbles: squabble._id } }
+        );
+
+        return squabble;
       }
       throw AuthenticationError;
     },
-    // Make it so a logged in user can only remove a skill from their own profile
-    removeSkill: async (parent, { skill }, context) => {
+    removeComment: async (parent, { squabbleId, commentId }, context) => {
       if (context.user) {
-        return Profile.findOneAndUpdate(
-          { _id: context.user._id },
-          { $pull: { skills: skill } },
+        return Squabble.findOneAndUpdate(
+          { _id: squabbleId },
+          {
+            $pull: {
+              comments: {
+                _id: commentId,
+                commentAuthor: context.user.username,
+              },
+            },
+          },
           { new: true }
         );
       }
@@ -83,4 +133,3 @@ const resolvers = {
 };
 
 module.exports = resolvers;
-
