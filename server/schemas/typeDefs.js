@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+HEAD
 const { gql } = require('apollo-server');
 
 module.exports = gql`
@@ -53,7 +53,7 @@ module.exports = gql`
     newPost: Post!
   }
 `;
-=======
+
 const typeDefs = `
   type Profile {
     _id: ID
@@ -93,4 +93,4 @@ const typeDefs = `
 `;
 
 module.exports = typeDefs;
->>>>>>> 7ccf3ac9deffbf4809bc50942767dbb6829c7805
+
