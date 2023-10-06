@@ -1,6 +1,15 @@
 const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
 
+const FighterImage = new Schema({
+    fighter1: { url: './assets/fighter/bilbo', alt: 'Bilbo' },
+    fighter2: { url: './assets/fighter/donkey', alt: 'DonkeyKong' },
+    fighter3: { url: './assets/fighter/dragon', alt: 'DragonballZ' },
+    fighter4: { url: './assets/fighter/tim', alt: 'TimRobinson'} ,
+    fighter5: { url: './assets/fighter/worf', alt: 'WorfStarTrek' },
+    fighter6: { url: './assets/fighter/images', alt: 'DarthVader' },
+});
+
 const profileSchema = new Schema({
   firstName: {
     type: String,
@@ -29,6 +38,7 @@ const profileSchema = new Schema({
     required: true,
     minlength: 5,
   },
+
   friends: {
     type: Array,
     default: [],
@@ -46,6 +56,7 @@ const profileSchema = new Schema({
 //     //image: [FighterImage],
 //     required: true,
 //   },
+
 });
 
 // set up pre-save middleware to create password
@@ -65,4 +76,4 @@ profileSchema.methods.isCorrectPassword = async function (password) {
 
 const Profile = model("Profile", profileSchema);
 
-module.exports = Profile;
+module.exports = Profile, FighterImage;

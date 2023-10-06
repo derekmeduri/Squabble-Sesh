@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ImageGallery = ({ images }) => {
+const fighterGallery = ({ images }) => {
   return (
     <div className="image-gallery">
       {images.map((imageUrl, index) => (
@@ -10,4 +10,4 @@ const ImageGallery = ({ images }) => {
   );
 };
 
-export default ImageGallery;
+export default fighterGallery;
