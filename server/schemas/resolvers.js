@@ -1,4 +1,4 @@
-const { Profile } = require('../models');
+const { Profile, User, Comment, Post } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 
 const resolvers = {
@@ -20,7 +20,7 @@ const resolvers = {
   },
 
   Mutation: {
-    addProfile: async (parent, { username, firstName, lastName, hottake, bio, email, password, fighterInput }) => {
+    addProfile: async (parent, { username, firstName, lastName, hottake, bio, email, password,  }) => {
       const profile = await Profile.create({ name, email, password });
       const token = signToken(profile);
 
