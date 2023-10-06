@@ -18,16 +18,32 @@ const typeDefs = `
     alt: String!
   }
 
+  type User {
+    _id: ID
+    firstName: String
+    lastName: String
+    username: String
+    email: String
+    password: String
+    friends: String
+    hotTakes: String
+    bio: String
+  }
+
+
+
   type Query {
-    profiles: [Profile]!
-    profile(profileId: ID!): Profile
+    user: [User]!
+    
     # Because we have the context functionality in place to check a JWT and decode its data, we can use a query that will always find and return the logged in user's data
-    me: Profile
-    postsWithMostComments: [Post]
+    me: User
+   
   }
 
   type Mutation {
-    addUser(username: String!, firstName: String!, lastName: String!, hottake: String!, bio: String!, email: String!, password: String!, fighterInput: [fighterImages]): Auth
+
+    addUser(username: String!, firstName: String!, lastName: String!, hottake: String!, bio: String!, email: String!, password: String!, ): Auth
+
     login(email: String!, password: String!): Auth
 
     
