@@ -26,19 +26,32 @@ const resolvers = {
   },
 
   Mutation: {
-    addUser: async (
+    addProfile: async (
       parent,
-      { firstName, lastName, username, email, password }
-    ) => {
-      const user = await User.create({
+      {
+        username,
         firstName,
         lastName,
-        username,
+        hottake,
+        bio,
         email,
         password,
+        fighterInput,
+      }
+    ) => {
+      const profile = await Profile.create({
+        username,
+        firstName,
+        lastName,
+        bio,
+        hottake,
+        email,
+        password,
+        fighterInput,
       });
-      const token = signToken(user);
-      return { token, user };
+      const token = signToken(profile);
+
+      return { token, profile };
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
