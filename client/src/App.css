@@ -56,3 +56,33 @@ h1 {
 .button:hover {
   background-color: var(--darkblue);
 }
+
+.left-sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 250px; /* Adjust the width as needed */
+  background-color: var(--blue);
+  color: var(--black);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 10px var(--black);
+}
+
+.left-sidebar .bottom-section {
+  flex: 1; /* Bottom section takes remaining vertical space */
+}
+
+.left-sidebar .menu-item {
+  padding: 10px 0;
+  font-size: 18px;
+  text-decoration: none;
+  color: var(--black);
+  transition: 0.3s;
+}
+
+.left-sidebar .menu-item:hover {
+  background-color: var(--blue);
+}
