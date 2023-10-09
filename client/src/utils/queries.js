@@ -1,6 +1,14 @@
 import { gql } from '@apollo/client';
 
-export const QUERY_POST = gql`
+export const QUERY_USER = gql`
+query getUser {
+  user {
+    _id
+    firstName
+  }
+}`;
+
+export const QUERY_USERPOSTS = gql`
   query getPosts {
     posts {
       _id
@@ -13,6 +21,13 @@ export const QUERY_POST = gql`
         commentText
         createdAt
       }
+    }
+  }`;
+
+  export const QUERY_USERBEEFS = gql`
+  query getComments {
+    posts{
+
     }
   }`;
 
