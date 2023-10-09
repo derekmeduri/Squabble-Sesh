@@ -1,6 +1,5 @@
-const Profile = require('./Profile');
-const Squabble = require('./Squabble');
-const User = require('./User');
-const Comment =require('./Comment');
+const Profile = require("./Profile");
+const Post = require("./Post");
+const User = require("./User");
 
-module.exports = { Profile, Squabble, User, Comment };
+module.exports = { Profile, Post, User };
