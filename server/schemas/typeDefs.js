@@ -10,7 +10,7 @@ const typeDefs = `
 
   type Auth {
     token: ID!
-    user: User
+    profile: Profile
   }
 
   type FighterImage {
