@@ -2,7 +2,7 @@
 
 function Nav() {
     return (
-        <nav className='left-sidebar'>
+        <aside className='left-sidebar'>
             <div className='top-section'>
                 <ul className='menu-item'>
                     <li>Top Squabbles</li>
@@ -19,7 +19,7 @@ function Nav() {
                     {/* <Shortcuts /> */}
                 </ul>
             </div>
-        </nav>
+        </aside>
     );
 }
 
