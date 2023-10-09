@@ -1,15 +1,15 @@
 const { Schema, model } = require("mongoose");
 const dateFormat = require("../utils/dateFormat");
 
-const squabbleSchema = new Schema({
-  squabbleText: {
+const postSchema = new Schema({
+  postText: {
     type: String,
     required: "Get to instigating!",
     minlength: 1,
     maxlength: 280,
     trim: true,
   },
-  squabbleAuthor: {
+  postAuthor: {
     type: String,
     required: true,
     trim: true,
@@ -40,6 +40,6 @@ const squabbleSchema = new Schema({
   ],
 });
 
-const Squabble = model("Squabble", squabbleSchema);
+const Post = model("Post", postSchema);
 
-module.exports = Squabble;
+module.exports = Post;
