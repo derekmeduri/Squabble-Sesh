@@ -36,9 +36,12 @@ body {
 header, footer {
     background-color: var(--blue);
     color: var(--black);
-    text-align: left;
     padding: 1rem;
     margin-bottom: 20px var(--yellow);
+}
+
+header {
+  text-align: left;
 }
 
 header img {
@@ -92,9 +95,9 @@ h1 {
 .left-sidebar {
   position: fixed;
   left: 0;
-  top: 0;
+  top: 200px;
   height: 100%;
-  width: 250px; /* Adjust the width as needed */
+  width: 25%; /* Adjust the width as needed */
   background-color: var(--blue);
   color: var(--black);
   padding: 20px;
