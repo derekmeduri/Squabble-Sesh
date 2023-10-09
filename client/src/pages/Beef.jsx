@@ -1,8 +1,8 @@
-import UserBeefs from '../components/UserBeefs';
+// import UserBeefs from '../components/UserBeefs';
 
 
-function Beef() {
+// function Beef() {
 
-};
+// };
 
-export default Beef;
+// export default Beef;

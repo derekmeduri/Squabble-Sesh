@@ -9,7 +9,7 @@ import Profile from './pages/Profile';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Explore from './pages/Explore';
-import Beef from './pages/Beef';
+// import Beef from './pages/Beef';
 import Error from './pages/Error';
 
 const router = createBrowserRouter([
@@ -39,9 +39,9 @@ const router = createBrowserRouter([
       }, {
         path: '/explore',
         element: <Explore />
-      }, {
-        path: '/beef',
-        element: <Beef />
+      // }, {
+      //   path: '/beef',
+      //   element: <Beef />
       },
     ]
   }

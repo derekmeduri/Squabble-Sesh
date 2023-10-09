@@ -8,7 +8,7 @@ function Header()  {
                 <header>
                     <div className="header-container">
                         <div className="logo-container">
-                            <img width="100%" height="100%" src="../assets/Squabble Sesh Logo Only.png" alt="Squabble Sesh Logo"></img>
+                            <img width="100%" height="100%" src="../src/assets/SSLogoOnly" alt="Squabble Sesh Logo"></img>
                             <p>Squabble Sesh</p>
                         </div>
                         <ul className="flex-row">
@@ -29,7 +29,7 @@ function Header()  {
                 <header>
                     <div className="header-container">
                     <div className="logo-container">
-                        <img width="100%" height="100%" src="../assets/Squabble Sesh Logo Only.png" alt="Squabble Sesh Logo"></img>
+                        <img width="100%" height="100%" src="../src/assets/SSLogoOnly.png" alt="Squabble Sesh Logo"></img>
                         <p>Squabble Sesh</p>
                     </div>
                     </div>
