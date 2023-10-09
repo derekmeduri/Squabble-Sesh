@@ -1,8 +1,17 @@
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+// import { Link } from 'react-router-dom';
 
-function Profile() {
+// import { useQuery } from '@apollo/client';
+// import { USER_POSTS } from '../utils/queries';
 
-};
+// function Profile() {
+//   const { data } = useQuery(USER_POSTS);
+//   let user;
 
-export default Profile;
+//   if (data) {
+//     user = data.user;
+//   }
+
+
+// };
+
+// export default Profile;
