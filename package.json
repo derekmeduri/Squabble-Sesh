@@ -2,6 +2,9 @@
   "name": "squabble-sesh",
   "version": "1.0.0",
   "description": "Squabble Sesh is a social media application for posting hot takes.",
+  "engines": {
+    "node": "20.7.0"
+  },
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js --ignore client",
