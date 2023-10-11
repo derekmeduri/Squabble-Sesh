@@ -2,6 +2,10 @@
   "name": "squabble-sesh",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": "20.x",
+    "npm": "7.x"
+  },
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -22,7 +26,8 @@
     "express": "^4.17.2",
     "graphql": "^16.6.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^7.0.2"
+    "mongoose": "^7.0.2",
+    "node": "^20.7.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"

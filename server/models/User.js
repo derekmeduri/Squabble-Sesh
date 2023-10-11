@@ -36,7 +36,7 @@ const userSchema = new Schema({
     minlength: 5,
   },
   friends: {
-    type: Array,
+    type: String,
     default: [],
   },
   hotTakes: {

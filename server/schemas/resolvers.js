@@ -1,32 +1,32 @@
-const { User, Squabble } = require("../models");
+const { User, Post } = require("../models");
 const { signToken, AuthenticationError } = require("../utils/auth");
 
 const resolvers = {
   Query: {
     users: async () => {
-      return User.find().populate("squabbles");
+      return User.find().populate("posts");
     },
     user: async (parent, { username }) => {
-      return User.findOne({ username }).populate("squabbles");
+      return User.findOne({ username }).populate("posts");
     },
-    squabbles: async (parent, { username }) => {
+    posts: async (parent, { username }) => {
       const params = username ? { username } : {};
-      return Squabble.find(params).sort({ createdAt: -1 });
+      return Post.find(params).sort({ createdAt: -1 });
     },
-    squabble: async (parent, { squabbleId }) => {
-      return Squabble.findOne({ _id: squabbleId });
+    post: async (parent, { postId }) => {
+      return Post.findOne({ _id: postId });
     },
     // we can retrieve the logged in user without specifically searching for them
     me: async (parent, args, context) => {
       if (context.user) {
-        return User.findOne({ _id: context.user._id }).populate("squabbles");
+        return User.findOne({ _id: context.user._id }).populate("posts");
       }
       throw AuthenticationError;
     },
   },
 
   Mutation: {
-    addProfile: async (
+    addUser: async (
       parent,
       {
         username,
@@ -39,7 +39,7 @@ const resolvers = {
         fighterInput,
       }
     ) => {
-      const profile = await Profile.create({
+      const user = await User.create({
         username,
         firstName,
         lastName,
@@ -49,7 +49,7 @@ const resolvers = {
         password,
         fighterInput,
       });
-      const token = signToken(profile);
+      const token = signToken(user);
 
       return { token, profile };
     },
@@ -76,26 +76,26 @@ const resolvers = {
       }
       throw AuthenticationError;
     },
-    addSquabble: async (parent, { squabbleText }, context) => {
+    addPost: async (parent, { postText }, context) => {
       if (context.user) {
-        const squabble = await Thought.create({
-          squabbleText,
-          squabbleAuthor: context.user.username,
+        const post = await Post.create({
+          postText,
+          postAuthor: context.user.username,
         });
 
         await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $addToSet: { squabble: squabble._id } }
+          { $addToSet: { post: post._id } }
         );
 
-        return squabble;
+        return post;
       }
       throw AuthenticationError;
     },
-    addComment: async (parent, { squabbleId, commentText }, context) => {
+    addComment: async (parent, { postId, commentText }, context) => {
       if (context.user) {
-        return Squabble.findOneAndUpdate(
-          { _id: squabbleId },
+        return Post.findOneAndUpdate(
+          { _id: postId },
           {
             $addToSet: {
               comments: { commentText, commentAuthor: context.user.username },
@@ -109,26 +109,26 @@ const resolvers = {
       }
       throw AuthenticationError;
     },
-    removeSquabble: async (parent, { squabbleId }, context) => {
+    removePost: async (parent, { postId }, context) => {
       if (context.user) {
-        const squabble = await Squabble.findOneAndDelete({
-          _id: squabbleId,
-          squabbleAuthor: context.user.username,
+        const post = await Post.findOneAndDelete({
+          _id: postId,
+          postAuthor: context.user.username,
         });
 
         await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $pull: { squabbles: squabble._id } }
+          { $pull: { posts: post._id } }
         );
 
-        return squabble;
+        return post;
       }
       throw AuthenticationError;
     },
-    removeComment: async (parent, { squabbleId, commentId }, context) => {
+    removeComment: async (parent, { postId, commentId }, context) => {
       if (context.user) {
-        return Squabble.findOneAndUpdate(
-          { _id: squabbleId },
+        return Post.findOneAndUpdate(
+          { _id: postId },
           {
             $pull: {
               comments: {

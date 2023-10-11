@@ -57,9 +57,9 @@ mutation newPost ($postId: ID!, $postText: String!) {
     }
 }`;
 
-export const EDIT_POST = gql ``
+// export const EDIT_POST = gql ``
 
-export const DELETE_POST = gql ``
+// export const DELETE_POST = gql ``
 
 export const NEW_COMMENT = gql `
 mutation newComment ($commentId: ID!, $commentText: String!) {
@@ -71,6 +71,6 @@ mutation newComment ($commentId: ID!, $commentText: String!) {
   }
 }`;
 
-export const EDIT_COMMENT = gql ``
+// export const EDIT_COMMENT = gql ``
 
-export const DELETE_COMMENT = gql ``
+// export const DELETE_COMMENT = gql ``

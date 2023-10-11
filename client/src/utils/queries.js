@@ -1,6 +1,14 @@
 import { gql } from '@apollo/client';
 
-export const QUERY_POST = gql`
+export const QUERY_USER = gql`
+query getUser {
+  user {
+    _id
+    firstName
+  }
+}`;
+
+export const QUERY_USERPOSTS = gql`
   query getPosts {
     posts {
       _id
@@ -15,6 +23,13 @@ export const QUERY_POST = gql`
       }
     }
   }`;
+
+  // export const QUERY_USERBEEFS = gql`
+  // query getComments {
+  //   posts{
+
+  //   }
+  // }`;
 
 export const QUERY_SINGLE_POST = gql`
   query getSinglePost($postId: ID!) {
@@ -45,5 +60,4 @@ export const QUERY_TOP_POSTS = gql`
             createdAt
         }
     }
-  }
-`
+  }`;
