@@ -2,6 +2,7 @@ import Auth from "../../utils/auth";
 import { useQuery } from '@apollo/client';
 import { QUERY_USER } from "../../utils/queries";
 import { Link } from 'react-router-dom';
+import './index.scss'
 
 function Header() {
     const { data } = useQuery(QUERY_USER);
