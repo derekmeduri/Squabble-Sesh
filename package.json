@@ -25,6 +25,7 @@
     "concurrently": "^8.2.1"
   },
   "dependencies": {
+    "nodemon": "^3.0.1",
     "sass": "^1.68.0"
   }
 }
