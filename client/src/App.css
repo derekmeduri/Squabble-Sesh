@@ -36,13 +36,13 @@ body {
 header, footer {
     background-color: var(--blue);
     color: var(--black);
-    padding: 1rem;
+    /* padding: 1rem; */
     margin-bottom: 20px var(--yellow);
 }
 
-header {
+/* header {
   text-align: left;
-}
+} */
 
 header img {
   width: 100px;
@@ -51,9 +51,9 @@ header img {
   margin-right: 10px;
 }
 
-header p {
+/* header p {
   text-align:left;
-}
+} */
 
 .main-body {
   margin: 20px var(--purple);

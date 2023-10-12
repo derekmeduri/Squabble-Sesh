@@ -39,8 +39,8 @@ function Header() {
                     <div className="header-container">
                     <div className="logo-container">
                         <img width="100%" height="100%" src="../src/assets/SSLogoOnly.png" alt="Squabble Sesh Logo"></img>
-                        <p>Squabble Sesh</p>
                     </div>
+                    <p>SQUABBLE SESH</p>
                     </div>
                 </header>
         );
