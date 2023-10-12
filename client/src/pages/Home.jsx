@@ -1,7 +1,7 @@
 import Nav from '../components/Nav';
 import '../styles/home.css'
-// import NewPost from '../components/NewPost';
-// import TopRecent from '../components/TopRecent';
+import NewPost from '../components/NewPost';
+import TopPosts from '../components/TopRecent';
 
 function Home() {
     return (
@@ -10,14 +10,14 @@ function Home() {
             
             <Nav />
         
-            {/* <div className='newpost-container'>
+            <div className='newpost-container'>
                 <NewPost />
-            </div> */}
+            </div>
             
             <h1>Top Squabbles Happening Now!</h1>
-            {/* <div className='topposts-container'>
-                <TopRecent />
-            </div>   */}
+            <div className='topposts-container'>
+                <TopPosts />
+            </div> 
         </main>
     );
 };

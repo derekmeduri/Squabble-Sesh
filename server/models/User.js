@@ -9,13 +9,7 @@ const userSchema = new Schema({
     min: 1,
     max: 50,
   },
-  lastName: {
-    type: String,
-    required: true,
-    trim: true,
-    min: 1,
-    max: 50,
-  },
+
   username: {
     type: String,
     required: true,
@@ -39,7 +33,7 @@ const userSchema = new Schema({
   //   type: String,
   //   default: [],
   // },
-  hotTakes: {
+  hotTake: {
     type: String,
     required: true,
   },

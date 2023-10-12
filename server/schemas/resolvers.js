@@ -31,9 +31,9 @@ const resolvers = {
       parent,
       {
         username,
-        firstname,
+        firstName,
        
-        hottake,
+        hotTake,
         bio,
         email,
         password,
@@ -41,10 +41,10 @@ const resolvers = {
     ) => {
       const user = await User.create({
         username,
-        firstname,
+        firstName,
       
         bio,
-        hottake,
+        hotTake,
         email,
         password,
       });

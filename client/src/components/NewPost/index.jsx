@@ -1,5 +1,5 @@
-import { useState} from 'react';
-import { useMutation } from '@apollo/react-hooks';
+import { useState } from 'react';
+import { useMutation } from '@apollo/client';
 import { NEW_POST } from '../../utils/mutations';
 
 const postEntry = ({ postId }) => {

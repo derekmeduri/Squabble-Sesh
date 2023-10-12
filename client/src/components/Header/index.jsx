@@ -1,12 +1,13 @@
-import Auth from "../../utils/auth";
+import AuthService from "../../utils/auth";
 import { useQuery } from '@apollo/client';
 import { QUERY_USER } from "../../utils/queries";
-import { Link } from 'react-router-dom';
 
 function Header() {
 
+    const { user } = useQuery(QUERY_USER);
+  
 
-        if (Auth.loggedIn()) {
+        if (AuthService.loggedIn()) {
             return (
                 <header>
                     <div className="header-container">
@@ -19,7 +20,7 @@ function Header() {
                                     <p>Welcome { user?.firstName } </p>
                                 </li>
                                 <li className="Logout">
-                                    <a href="/" onClick={() => Auth.logout()}>
+                                    <a href="/" onClick={() => AuthService.logout()}>
                                     Logout
                                     </a>
                                 </li>

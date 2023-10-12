@@ -1,5 +1,6 @@
 import React from 'react';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/client';
+import { QUERY_TOP_POSTS } from '../../utils/queries';
 
 
 function TopPosts() {
@@ -15,6 +16,9 @@ function TopPosts() {
             <h2>{post.username}</h2>
             <p>{post.postText}</p>
             <p>Number of Comments: {post.comments.length}</p>
+            <form className='commentBox'>
+
+            </form>
           </div>
         ))}
       </div>
