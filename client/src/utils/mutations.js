@@ -13,32 +13,33 @@ export const LOGIN = gql`
 export const ADD_USER = gql`
   mutation addUser(
     $username: String!
-    $firstName: String!
-    $lastName: String!
+    $firstname: String!
+   
     $hottake: String!
     $bio: String!
     $email: String!
     $password: String!
-    $fighterInput: [fighterInput]
+  
 
   ) {
     addUser(
       username: $username
-      firstName: $firstName
-      lastName: $lastName
+      firstname: $firstname
+      
       hottake: $hottake
       bio: $bio
       email: $email
       password: $password
-      fighter: $fighterId
+      
 
     ) {
       token
-      user {
+      user{
         _id
       }
     }
-  }`;
+    }
+  `;
 
 export const NEW_POST = gql `
 mutation newPost ($postId: ID!, $postText: String!) {

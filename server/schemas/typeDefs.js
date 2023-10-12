@@ -66,13 +66,10 @@ const typeDefs = `
 
   type Auth {
     token: ID!
-    profile: Profile
+   user: User
   }
 
-  type FighterImage {
-    url: String! 
-    alt: String!
-  }
+
 
   type User {
     _id: ID
@@ -117,7 +114,7 @@ const typeDefs = `
 
   type Mutation {
 
-    addUser(username: String!, firstName: String!, lastName: String!, hottake: String!, bio: String!, email: String!, password: String!, ): Auth
+    addUser(username: String!, firstname: String!,  hottake: String!, bio: String!, email: String!, password: String!, ): Auth
     login(email: String!, password: String!): Auth
     addPost(postText: String!): Post
     addComment(postId: ID!, commentText: String!): Post

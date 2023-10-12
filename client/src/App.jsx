@@ -32,6 +32,7 @@ import {
   const client = new ApolloClient({
     link: authLink.concat(httpLink),
     cache: new InMemoryCache(),
+    uri: 'http://localhost:3001',
   });
   
   function App() {
