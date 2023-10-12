@@ -30,10 +30,10 @@
             border-radius: 5px;
             margin: 2%;
             cursor: pointer;
-          }
 
-          .button:hover {
-            background-color: var(--orange);
+            &:hover{
+                background-color: var(--orange);
+            }
           }
       }
 }
