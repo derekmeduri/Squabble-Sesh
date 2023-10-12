@@ -7,6 +7,7 @@ const resolvers = {
       return User.find().populate("posts");
     },
     user: async (parent, { username }) => {
+      console.log('userquery');
       return User.findOne({ username }).populate("posts");
     },
     posts: async (parent, { username }) => {
@@ -30,24 +31,22 @@ const resolvers = {
       parent,
       {
         username,
-        firstName,
-        lastName,
+        firstname,
+       
         hottake,
         bio,
         email,
         password,
-        fighterInput,
       }
     ) => {
       const user = await User.create({
         username,
-        firstName,
-        lastName,
+        firstname,
+      
         bio,
         hottake,
         email,
         password,
-        fighterInput,
       });
       const token = signToken(user);
 

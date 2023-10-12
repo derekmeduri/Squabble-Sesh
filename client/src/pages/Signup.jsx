@@ -13,9 +13,9 @@ function Signup(props) {
       event.preventDefault();
       const mutationResponse = await addUser({
         variables: {
-          userName: formState.userName,
-          firstName: formState.firstName,
-          hotTake: formState.hotTake,
+          username: formState.username,
+          firstname: formState.firstname,
+          hottake: formState.hottake,
           bio: formState.bio,
           email: formState.email,
           password: formState.password,
@@ -28,6 +28,7 @@ function Signup(props) {
   
     const handleChange = (event) => {
       const { name, value } = event.target;
+      console.log('input name', formState)
       setFormState({
         ...formState,
         [name]: value,
@@ -41,19 +42,19 @@ function Signup(props) {
             <form onSubmit={handleFormSubmit}>
                 <div className="form-group">
                     <label htmlFor="username">Username:</label>
-                    <input id="username" name="username" type="username" onChange={handleChange} />
+                    <input id="username" name="username" type="text" onChange={handleChange} />
                 </div>
                 <div className="form-group">
                     <label htmlFor="firstname">First Name:</label>
-                    <input type="first" id="firstname" name="firstname" onChange={handleChange} />
+                    <input type="text" id="firstname" name="firstname" onChange={handleChange} />
                 </div>
                 <div className="form-group">
                     <label htmlFor="hottake">What's your hottest take?</label>
-                    <input type="hottake" id="hottake" name="hottake" onChange={handleChange} />
+                    <input type="text" id="hottake" name="hottake" onChange={handleChange} />
                 </div>
                 <div className="form-group">
                     <label htmlFor="bio">Tell everyone a little about yourself!</label>
-                    <input type="bio" id="bio" name="bio" onChange={handleChange} />
+                    <input type="text" id="bio" name="bio" onChange={handleChange} />
                 </div>
                 <div className="form-group">
                     <label htmlFor="email">Email:</label>
