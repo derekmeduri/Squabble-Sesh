@@ -25,11 +25,6 @@
     "concurrently": "^8.2.1"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "nodemon": "^3.0.1",
-    "sass": "^1.68.0"
-=======
     "apollo-proxy-cache": "^8.1.3"
->>>>>>> e1911415b393b43560dc82d59cec5115f21c844d
   }
 }
