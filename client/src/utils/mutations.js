@@ -13,9 +13,9 @@ export const LOGIN = gql`
 export const ADD_USER = gql`
   mutation addUser(
     $username: String!
-    $firstname: String!
+    $firstName: String!
    
-    $hottake: String!
+    $hotTake: String!
     $bio: String!
     $email: String!
     $password: String!
@@ -24,9 +24,9 @@ export const ADD_USER = gql`
   ) {
     addUser(
       username: $username
-      firstname: $firstname
+      firstName: $firstName
       
-      hottake: $hottake
+      hotTake: $hotTake
       bio: $bio
       email: $email
       password: $password
