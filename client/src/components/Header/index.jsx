@@ -4,12 +4,7 @@ import { QUERY_USER } from "../../utils/queries";
 import { Link } from 'react-router-dom';
 
 function Header() {
-    const { data } = useQuery(QUERY_USER);
-    let user;
-    
-    if (data) {
-    user = data.user;
-    }
+
 
         if (Auth.loggedIn()) {
             return (
@@ -21,7 +16,7 @@ function Header() {
                         </div>
                         <ul className="flex-row">
                                 <li className="mx-1">
-                                    <p>Welcome { user.firstName } </p>
+                                    <p>Welcome { user?.firstName } </p>
                                 </li>
                                 <li className="Logout">
                                     <a href="/" onClick={() => Auth.logout()}>
