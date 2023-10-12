@@ -5,46 +5,46 @@ body {
   height: 100vh;
   margin: 0;
   background-color: #f4f4f4;
-}
 
-.signup-container {
-  text-align: center;
-  background-color: #67399b;
-  padding: 20px;
-  border-radius: 5px;
-
-  .form-group {
-    margin-bottom: 15px;
-
-    label {
-      display: block;
-      margin-bottom: 5px;
+  .signup-container {
+    text-align: center;
+    background-color: #67399b;
+    padding: 20px;
+    border-radius: 5px;
+  
+    .form-group {
+      margin-bottom: 15px;
+  
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+  
+      input[type="text"],
+      input[type="email"],
+      input[type="password"] {
+        width: 11rem;
+        padding: 8px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-sizing: border-box;
+      }
     }
 
-    input[type="text"],
-    input[type="email"],
-    input[type="password"] {
-      width: 11rem;
-      padding: 8px;
-      font-size: 16px;
-      border: 1px solid #ccc;
-      border-radius: 3px;
-      box-sizing: border-box;
-    }
+    .btn-signup {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 3px;
+        transition: background-color 0.3s;
+      
+        &:hover {
+          background-color: navy;
+        }
+      }
   }
-}
-
-button {
-  background-color: #48b7cd;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 3px;
-  transition: background-color 0.3s;
-}
-
-button:hover {
-  background-color: navy;
 }
