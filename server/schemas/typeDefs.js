@@ -55,14 +55,7 @@ module.exports = gql`
 `;
 
 const typeDefs = `
-  type Profile {
-    _id: ID
-    firstName: String
-    lastName: String
-    username: String
-    email: String
-    password: String
-  }
+
 
   type Auth {
     token: ID!
@@ -74,12 +67,10 @@ const typeDefs = `
   type User {
     _id: ID
     firstName: String
-    lastName: String
     username: String
     email: String
     password: String
-    friends: String
-    hotTakes: String
+    hotTake: String
     bio: String
   }
 
@@ -114,7 +105,7 @@ const typeDefs = `
 
   type Mutation {
 
-    addUser(username: String!, firstname: String!,  hottake: String!, bio: String!, email: String!, password: String!, ): Auth
+    addUser(username: String!, firstName: String!,  hotTake: String!, bio: String!, email: String!, password: String!, ): Auth
     login(email: String!, password: String!): Auth
     addPost(postText: String!): Post
     addComment(postId: ID!, commentText: String!): Post

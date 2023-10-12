@@ -31,9 +31,9 @@ const resolvers = {
       parent,
       {
         username,
-        firstname,
+        firstName,
        
-        hottake,
+        hotTake,
         bio,
         email,
         password,
@@ -41,19 +41,19 @@ const resolvers = {
     ) => {
       const user = await User.create({
         username,
-        firstname,
+        firstName,
       
         bio,
-        hottake,
+        hotTake,
         email,
         password,
       });
       const token = signToken(user);
 
-      return { token, profile };
+      return { token, user };
     },
-    login: async (parent, { email, password }) => {
-      const user = await User.findOne({ email });
+    login: async (parent, { username, password }) => {
+      const user = await User.findOne({ username });
 
       if (!user) {
         throw AuthenticationError;
