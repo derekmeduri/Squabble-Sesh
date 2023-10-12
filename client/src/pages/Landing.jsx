@@ -1,4 +1,5 @@
 import LandingBtns from "../components/LandingBtns";
+import '../components/LandingBtns/index.scss'
 
 function Landing() {
     return (

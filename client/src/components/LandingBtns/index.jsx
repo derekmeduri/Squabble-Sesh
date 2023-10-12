@@ -1,6 +1,6 @@
 function LandingBtns()  {
     return (
-    <div>
+    <div className="landingBtn">
         <a href="/login" class="button">Login</a>
         <a href="/signup" class="button">Sign Up</a>
     </div>
