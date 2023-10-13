@@ -6,14 +6,14 @@ import Auth from '../utils/auth';
 import '../styles/login.css';
 
 function Login(props) {
-    const [formState, setFormState] = useState({ email: '', password: '' });
-    const [login, { error }] = useMutation(LOGIN);
+    const [formState, setFormState] = useState({ username: '', password: '' });
+    const [login, { error, data }] = useMutation(LOGIN);
   
     const handleFormSubmit = async (event) => {
       event.preventDefault();
       try {
         const mutationResponse = await login({
-          variables: { email: formState.email, password: formState.password },
+          variables: { ...formState },
         });
         const token = mutationResponse.data.login.token;
         Auth.login(token);
@@ -38,7 +38,7 @@ function Login(props) {
         <form onSubmit={handleFormSubmit}>
             <div className="form-group">
                 <label htmlFor="username">Username:</label>
-                <input type="username" id="username" name="username" onChange={handleChange} />
+                <input type="text" id="username" name="username" onChange={handleChange} />
             </div>
             <div className="form-group">
                 <label htmlFor="password">Password:</label>
