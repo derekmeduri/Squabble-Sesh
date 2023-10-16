@@ -4,7 +4,7 @@
   "description": "",
   "engines": {
     "node": "20.x",
-    "npm": "7.x"
+    "npm": "9.x"
   },
   "main": "server.js",
   "scripts": {
@@ -27,7 +27,12 @@
     "graphql": "^16.6.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^7.0.2",
-    "node": "^20.7.0"
+    "node": "^20.7.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.16.0",
+    "serve": "^14.2.1",
+    "vite": "^4.4.11"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"

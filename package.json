@@ -3,15 +3,20 @@
   "version": "1.0.0",
   "description": "Squabble Sesh is a social media application for posting hot takes.",
   "engines": {
-    "node": "20.7.0"
+    "node": "20.x",
+    "npm": "9.x"
   },
   "main": "server/server.js",
   "scripts": {
-    "start": "node server/server.js --ignore client",
-    "develop": "concurrently \"cd server && npm run start\" \"cd client && npm run dev\"",
+    "vite": "vite",
+    "start": "serve -s dist",
+    "heroku-postbuild": "npm run build",
+    "dev": "concurrently \"npm:server\" \"npm:vite\"",
     "install": "cd server && npm i && cd ../client && npm i",
     "seed": "cd server && npm run seed",
-    "build": "cd client && npm run build"
+    "build": "cd client && npm run build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
   },
   "keywords": [],
   "authors": [
@@ -25,6 +30,13 @@
     "concurrently": "^8.2.1"
   },
   "dependencies": {
-    "apollo-proxy-cache": "^8.1.3"
+    "@vitejs/plugin-react": "^4.1.0",
+    "node": "^20.7.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-dotenv": "^0.1.3",
+    "react-router-dom": "^6.16.0",
+    "serve": "^14.2.1",
+    "vite": "^4.4.11"
   }
 }
