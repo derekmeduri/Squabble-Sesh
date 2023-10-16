@@ -14,8 +14,8 @@ function Signup(props) {
       const mutationResponse = await addUser({
         variables: {
           username: formState.username,
-          firstName: formState.firstname,
-          hotTake: formState.hottake,
+          firstName: formState.firstName,
+          hotTake: formState.hotTake,
           bio: formState.bio,
           email: formState.email,
           password: formState.password,
@@ -46,11 +46,11 @@ function Signup(props) {
                 </div>
                 <div className="form-group">
                     <label htmlFor="firstName">First Name:</label>
-                    <input type="text" id="firstName" name="firstname" onChange={handleChange} />
+                    <input type="text" id="firstName" name="firstName" onChange={handleChange} />
                 </div>
                 <div className="form-group">
                     <label htmlFor="hotTake">What's your hottest take?</label>
-                    <input type="text" id="hotTake" name="hottake" onChange={handleChange} />
+                    <input type="text" id="hotTake" name="hotTake" onChange={handleChange} />
                 </div>
                 <div className="form-group">
                     <label htmlFor="bio">Tell everyone a little about yourself!</label>

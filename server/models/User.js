@@ -9,7 +9,6 @@ const userSchema = new Schema({
     min: 1,
     max: 50,
   },
-
   username: {
     type: String,
     required: true,
