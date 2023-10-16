@@ -1,0 +1,39 @@
+.main-landing{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+        height: 15rem;
+        width: 15rem;
+      }
+
+      h1 {
+        color: #ffffff;
+      }
+
+      .button-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 25%;
+        border: 10px #67399b;
+
+        .button {
+            padding: 10px 60px;
+            font-size: 18px;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #48B7cd;
+            border: none;
+            border-radius: 5px;
+            margin: 2%;
+            cursor: pointer;
+
+            &:hover{
+                background-color: var(--orange);
+            }
+          }
+      }
+}
