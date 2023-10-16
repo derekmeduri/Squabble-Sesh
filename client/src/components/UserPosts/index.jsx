@@ -1,9 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Post from '..Post'
-import { listbyUser } from '..post-comment';
+import Post from '../Post'
 
-export default function PostList (props) {
+export default function UserPosts (props) {
     return (
       <div style={{marginTop: '24px'}}>
         {props.posts.map((item, i) => {
@@ -13,7 +12,7 @@ export default function PostList (props) {
       </div>
     )
 }
-PostList.propTypes = {
+UserPosts.propTypes = {
   posts: PropTypes.array.isRequired,
   removeUpdate: PropTypes.func.isRequired
 }

@@ -19,7 +19,7 @@ function Signup(props) {
           bio: formState.bio,
           email: formState.email,
           password: formState.password,
-        // fighter picture select
+        // fighter: formState.fighter
         },
       });
       const token = mutationResponse.data.addUser.token;

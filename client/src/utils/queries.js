@@ -71,3 +71,9 @@ export const QUERY_TOP_POSTS = gql`
        }
      }
  }`
+
+ export const SEARCH_QUERY = gql `
+ query getSearchResults {
+    posts
+ }
+ `
