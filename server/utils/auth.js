@@ -1,3 +1,4 @@
+
 const { GraphQLError } = require('graphql');
 const jwt = require('jsonwebtoken');
 
@@ -34,6 +35,7 @@ module.exports = {
     // return the request object so it can be passed to the resolver as `context`
     return req;
   },
+  // signtoken
   signToken: function ({ username, name, _id }) {
     const payload = { username, name, _id };
     return jwt.sign({ data: payload }, secret, { expiresIn: expiration });
