@@ -6,11 +6,6 @@ const typeDefs = `
     profile: Profile
   }
 
-  type FighterImage {
-    url: String! 
-    alt: String!
-  }
-
   type User {
     _id: ID
     firstName: String
