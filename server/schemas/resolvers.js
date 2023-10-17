@@ -7,7 +7,7 @@ const resolvers = {
       return User.find().populate("posts");
     },
     user: async (parent, { username }) => {
-      console.log('userquery');
+      console.log("userquery");
       return User.findOne({ username }).populate("posts");
     },
     posts: async (parent, { username }) => {
@@ -32,7 +32,7 @@ const resolvers = {
       {
         username,
         firstName,
-       
+
         hotTake,
         bio,
         email,
@@ -42,7 +42,7 @@ const resolvers = {
       const user = await User.create({
         username,
         firstName,
-      
+
         bio,
         hotTake,
         email,
@@ -75,7 +75,7 @@ const resolvers = {
       }
       throw AuthenticationError;
     },
-    addPost: async (parent, { postText }, context) => {
+    newPost: async (parent, { postText }, context) => {
       if (context.user) {
         const post = await Post.create({
           postText,
@@ -91,7 +91,7 @@ const resolvers = {
       }
       throw AuthenticationError;
     },
-    addComment: async (parent, { postId, commentText }, context) => {
+    newComment: async (parent, { postId, commentText }, context) => {
       if (context.user) {
         return Post.findOneAndUpdate(
           { _id: postId },
