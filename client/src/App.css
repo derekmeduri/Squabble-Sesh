@@ -55,7 +55,7 @@ header p {
   text-align:left;
 }
 
-.main-body {
+.body-main {
   margin: 20px var(--purple);
   padding: 20px;
   border: 20px solid var(--purple);
@@ -92,12 +92,13 @@ h1 {
   background-color: var(--orange);
 }
 
+.home-container {
+  display: flex;
+}
+
 .left-sidebar {
-  position: fixed;
-  left: 0;
-  top: 200px;
   height: 100%;
-  width: 25%; /* Adjust the width as needed */
+  width: 30%; /* Adjust the width as needed */
   background-color: var(--blue);
   color: var(--black);
   padding: 20px;
@@ -120,4 +121,12 @@ h1 {
 
 .left-sidebar .menu-item:hover {
   background-color: var(--blue);
+}
+
+.main-home {
+  width: 70%;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  margin: 20px
 }

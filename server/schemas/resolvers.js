@@ -75,12 +75,13 @@ const resolvers = {
       }
       throw AuthenticationError;
     },
-    addPost: async (parent, { postText }, context) => {
+    addPost: async (_, { postInput }, context) => {
       if (context.user) {
-        const post = await Post.create({
-          postText,
-          postAuthor: context.user.username,
-        });
+        const { postText } = postInput;
+        const post = new Post
+        ({ postText, postAuthor: context.user.username });
+
+        
 
         await User.findOneAndUpdate(
           { _id: context.user._id },
@@ -88,10 +89,12 @@ const resolvers = {
         );
 
         return post;
-      }
-      throw AuthenticationError;
+
+      } throw AuthenticationError;
+      
     },
-    addComment: async (parent, { postId, commentText }, context) => {
+
+    addComment: async (_, { postId, commentText }, context) => {
       if (context.user) {
         return Post.findOneAndUpdate(
           { _id: postId },

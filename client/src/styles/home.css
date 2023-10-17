@@ -1,4 +1,33 @@
 .left-sidebar {
     display:inline-block;
-    height:fit-content
+    height:fit-content;
+
+}
+
+.logo-container {
+    display: inline-block;
+}
+
+.flex-row li {
+    display: inline-block;
+    align-items: end;
+    margin: 0 10px;
+}
+
+.flex-row li a {
+    text-decoration: none;
+    color: black;
+}
+
+.main-body {
+    display: flex;
+    justify-content:space-between;
+}
+
+.main-body div{
+    width: 70%;
+}
+
+.main-body aside {
+    width: 30%;
 }
