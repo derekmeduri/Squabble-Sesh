@@ -1,5 +1,5 @@
 import Nav from '../components/Nav';
-import '../styles/home.css'
+import '../styles/home.scss'
 // import NewPost from '../components/NewPost';
 // import TopRecent from '../components/TopRecent';
 

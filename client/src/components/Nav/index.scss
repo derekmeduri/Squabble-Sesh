@@ -1,0 +1,16 @@
+.left-sidebar {
+    display: flex;
+    flex-direction: column;
+
+    .menu-item {
+        list-style: none;
+        
+        h1 {
+            color: black;
+        }
+
+        li {
+            font-size: 2rem;
+        }
+    }
+}

@@ -1,4 +1,5 @@
 // import Shortcuts from "../Shortcut";
+import './index.scss';
 
 function Nav() {
     return (
