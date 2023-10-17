@@ -36,23 +36,8 @@ body {
 header, footer {
     background-color: var(--blue);
     color: var(--black);
-    padding: 1rem;
+    /* padding: 1rem; */
     margin-bottom: 20px var(--yellow);
-}
-
-header {
-  text-align: left;
-}
-
-header img {
-  width: 100px;
-  height: 100px;
-  vertical-align:middle;
-  margin-right: 10px;
-}
-
-header p {
-  text-align:left;
 }
 
 .main-body {
@@ -63,34 +48,8 @@ header p {
   margin-bottom: 1px var(--black);
 }
 
-h1 {
-  margin-bottom: 20px;
-}
 
-.button-container a {
-  display: flex-end;
-  gap: 20px;
-  width: 25%;
-  border: 10px var(--purple);
-  justify-content:center;
-}
 
-.button {
-  padding: 10px 60px;
-  font-size: 18px;
-  text-decoration: none;
-  color: var(--white);
-  background-color: var(--blue);
-  border: none;
-  border-radius: 5px;
-  margin: 2%;
-  cursor: pointer;
-  align-items: center;
-}
-
-.button:hover {
-  background-color: var(--orange);
-}
 
 .left-sidebar {
   position: fixed;

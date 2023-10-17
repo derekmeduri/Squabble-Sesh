@@ -5,11 +5,11 @@ import './index.css';
 import App from './App.jsx';
 import Landing from './pages/Landing';
 import Home from './pages/Home';
-import Profile from './pages/Profile';
+//import Profile from './pages/Profile';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Explore from './pages/Explore';
-// import Beef from './pages/Beef';
+//import Beef from './pages/Beef';
 import Error from './pages/Error';
 
 const router = createBrowserRouter([
@@ -31,20 +31,20 @@ const router = createBrowserRouter([
         path: '/signup',
         element: <Signup />
        },
-       {
-         path: '/me',
-         element: <Profile />
-       }, {
-         path: '/profiles/:profileId',
-         element: <Profile />
-       }, 
+      // {
+      //   path: '/profile',
+      //   element: <Profile />
+      // }, {
+      //   path: '/profiles/:profileId',
+      //   element: <Profile />
+      // }, 
       {
         path: '/explore',
         element: <Explore />
       },
        {
-      //   path: '/beef',
-      //   element: <Beef />
+        // path: '/beef',
+        // element: <Beef />
       },
     ]
   }

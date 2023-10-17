@@ -2,7 +2,7 @@
 
 
 // function Beef() {
-    
+
 // };
 
 // export default Beef;

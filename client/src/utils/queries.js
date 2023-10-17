@@ -5,7 +5,6 @@ query getUser {
   user {
     _id
     firstName
-    username
   }
 }`;
 
@@ -24,6 +23,13 @@ export const QUERY_USERPOSTS = gql`
       }
     }
   }`;
+
+  // export const QUERY_USERBEEFS = gql`
+  // query getComments {
+  //   posts{
+
+  //   }
+  // }`;
 
 export const QUERY_SINGLE_POST = gql`
   query getSinglePost($postId: ID!) {
@@ -55,25 +61,3 @@ export const QUERY_TOP_POSTS = gql`
         }
     }
   }`;
-
-   export const QUERY_COMMENTS = gql `
-   query getComments {
-     comments {
-       _id
-       username
-       commentText
-       createdAt
-       post {
-         _id
-         username
-         postText
-         createdAt
-       }
-     }
- }`
-
- export const SEARCH_QUERY = gql `
- query getSearchResults {
-    posts
- }
- `

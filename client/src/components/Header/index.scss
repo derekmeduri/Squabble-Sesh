@@ -1,0 +1,19 @@
+.header-container{
+    background-color: #48B7CD;
+    display: flex;
+    padding: 0.5rem;
+    border: solid black;
+
+    img {
+        width: 100px;
+        height: 100px;
+        vertical-align:middle;
+        margin-right: 10px;
+      }
+      
+
+    p{
+        font-size: 30px;
+        font-weight: 400;
+    }
+}

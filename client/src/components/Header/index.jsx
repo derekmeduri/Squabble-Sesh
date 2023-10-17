@@ -1,13 +1,13 @@
-import AuthService from "../../utils/auth";
+import Auth from "../../utils/auth";
 import { useQuery } from '@apollo/client';
 import { QUERY_USER } from "../../utils/queries";
+import { Link } from 'react-router-dom';
+import './index.scss'
 
 function Header() {
 
-    const { user } = useQuery(QUERY_USER);
-  
 
-        if (AuthService.loggedIn()) {
+        if (Auth.loggedIn()) {
             return (
                 <header>
                     <div className="header-container">
@@ -20,7 +20,7 @@ function Header() {
                                     <p>Welcome { user?.firstName } </p>
                                 </li>
                                 <li className="Logout">
-                                    <a href="/" onClick={() => AuthService.logout()}>
+                                    <a href="/" onClick={() => Auth.logout()}>
                                     Logout
                                     </a>
                                 </li>
@@ -34,8 +34,8 @@ function Header() {
                     <div className="header-container">
                     <div className="logo-container">
                         <img width="100%" height="100%" src="../src/assets/SSLogoOnly.png" alt="Squabble Sesh Logo"></img>
-                        <p>Squabble Sesh</p>
                     </div>
+                    <p>SQUABBLE SESH</p>
                     </div>
                 </header>
         );
