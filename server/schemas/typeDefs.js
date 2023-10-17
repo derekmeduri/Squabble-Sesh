@@ -3,7 +3,7 @@ const typeDefs = `
 
   type Auth {
     token: ID!
-    profile: Profile
+   user: User
   }
 
   type User {
