@@ -5,12 +5,15 @@ import { QUERY_TOP_POSTS } from '../../utils/queries';
 
 function TopPosts() {
   const { loading, error, data } = useQuery(QUERY_TOP_POSTS);
+  console.log(data);
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
   // Sort the posts by the number of comments in descending order
-  const sortedPosts = data.TopPosts.slice().sort((a, b) => b.comments.length - a.comments.length);
+  const sortedPosts = data.posts.slice().sort((a, b) => b.comments.length - a.comments.length);
+  console.log(sortedPosts);
   // Get the top 5 posts
   const top5Posts = sortedPosts.slice(0, 5);
+  console.log(top5Posts);
   return (
     <div>
       {top5Posts.map(post => (
