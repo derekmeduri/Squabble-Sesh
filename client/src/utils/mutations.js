@@ -42,7 +42,7 @@ export const ADD_USER = gql`
   `;
 
 export const NEW_POST = gql `
-mutation addPost($postInput: PostInput!) {
+mutation addPost($postInput: input) {
     addPost(postInput: $postInput) {
         _id
         postText
