@@ -1,17 +1,43 @@
-// import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import ProfileHeader from '../components/Profile';
+import UserPosts from '../components/UserPosts';
+import axios from 'axios';
 
-// import { useQuery } from '@apollo/client';
-// import { USER_POSTS } from '../utils/queries';
+export default function Profile ({ userId }) {
+  const [user, setUser] = useState(null);
+  const [posts, setPosts] = useState([]);
 
-// function Profile() {
-//   const { data } = useQuery(USER_POSTS);
-//   let user;
+  useEffect(() => {
+    const fetchUserProfile = async () => {
+      try {
+        const response = await axios.get(`/api/profile/${userId}`);
+        setUser(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
 
-//   if (data) {
-//     user = data.user;
-//   }
+    const fetchUserPosts = async () => {
+      try {
+        const response = await axios.get(`/api/posts/${userId}`);
+        setPosts(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
 
+    fetchUserProfile();
+    fetchUserPosts();
+  }, [userId]);
 
-// };
+  if (!user || !posts) {
+    return <div>Loading...</div>;
+  }
 
-// export default Profile;
+  return (
+    <div className="profile-page">
+      <ProfileHeader user={user} />
+      <UserPosts posts={posts} />
+    </div>
+  );
+};
