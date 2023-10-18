@@ -18,9 +18,9 @@ function TopPosts() {
     <div>
       {top5Posts.map(post => (
         <div key={post.id}>
-          <h2>{post.username}</h2>
-          <p>{post.postText}</p>
-          <p>Number of Comments: {post.comments.length}</p>
+          <h2 key={post.username} >{post.username}</h2>
+          <p key= {post.postText} >{post.postText}</p>
+          <p key={post.comments.length} >Number of Comments: {post.comments.length}</p>
         </div>
       ))}
     </div>
