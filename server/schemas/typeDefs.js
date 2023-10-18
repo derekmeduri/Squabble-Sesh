@@ -38,7 +38,7 @@ const typeDefs = `
   type Query {
     users: [User]
     user(username: String): User
-    posts(username: String): [Post]
+    posts(username: String, postText: String, postAuthor: String, createdAt: String): [Post]
     post(postId: ID!): Post
     comments(commentId: ID!): Comment
    

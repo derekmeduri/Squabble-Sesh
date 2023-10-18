@@ -17,12 +17,6 @@ export const QUERY_USERPOSTS = gql`
       username
       postText
       createdAt
-      comments {
-        _id
-        username
-        commentText
-        createdAt
-      }
     }
   }
 `;
@@ -89,12 +83,6 @@ export const QUERY_ME = gql`
       _id
       firstName
       username
-      posts {
-        _id
-        username
-        postText
-        createdAt
       }
     }
-  }
 `;
