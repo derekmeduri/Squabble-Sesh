@@ -5,7 +5,7 @@ import { useQuery } from '@apollo/client';
 import ProfileHeader from '../components/Profile';
 import UserPosts from '../components/UserPosts';
 import axios from 'axios';
-import { QUERY_USER, QUERY_ME, QUERY_USERPOSTS } from '../utils/queries';
+import { QUERY_USER, QUERY_ME } from '../utils/queries';
 import Auth from '../utils/auth';
 import Post from '../components/Post/index';
 

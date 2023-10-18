@@ -83,6 +83,12 @@ export const QUERY_ME = gql`
       _id
       firstName
       username
+      posts {
+        _id
+        postText
+        postAuthor
+        createdAt
       }
     }
+  }
 `;
