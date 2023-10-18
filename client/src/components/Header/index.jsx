@@ -31,7 +31,7 @@ function Header() {
             return (
                 <header>
                     <div className="header-container" href="/login">
-                    <a className="logo-container">
+                    <a className="logo-container" href="/login">
                         <img width="100%" height="100%" src="../src/assets/SSLogoOnly.png" alt="Squabble Sesh Logo"></img>
                         <p>Squabble Sesh</p>
                     </a>
