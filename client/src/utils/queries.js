@@ -94,12 +94,6 @@ export const QUERY_ME = gql`
         username
         postText
         createdAt
-        comments {
-          _id
-          username
-          commentText
-          createdAt
-        }
       }
     }
   }
