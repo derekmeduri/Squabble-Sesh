@@ -6,6 +6,8 @@ export const QUERY_USER = gql`
       _id
       firstName
       username
+      bio
+      hotTake
     }
   }
 `;
@@ -14,7 +16,7 @@ export const QUERY_USERPOSTS = gql`
   query getPosts {
     posts {
       _id
-      username
+      postAuthor
       postText
       createdAt
     }
@@ -83,12 +85,7 @@ export const QUERY_ME = gql`
       _id
       firstName
       username
-      posts {
-        _id
-        postText
-        postAuthor
-        createdAt
-      }
+   
     }
   }
 `;

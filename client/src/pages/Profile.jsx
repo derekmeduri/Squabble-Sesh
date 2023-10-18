@@ -8,6 +8,7 @@ import axios from 'axios';
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
 import Auth from '../utils/auth';
 import Post from '../components/Post/index';
+import PostList from '../components/Profile';
 
 // const queryUser = QUERY_USER;
 
@@ -40,8 +41,7 @@ import Post from '../components/Post/index';
 
 //   if (!user || !posts) {
 //     return <div>Loading...</div>;
-//   }
-const query = QUERY_USER;
+//   
 const Profile = () => {
   const { username: userParam } = useParams();
 
@@ -51,9 +51,16 @@ const Profile = () => {
 
   const user = data?.me || data?.user || {};
   const post = data?.me || data?.post || {};
+  console.log(user);
+  console.log(post);
   // navigate to personal profile page if username is yours
   if (Auth.loggedIn()) {
-    return <Navigate to="/me" />;
+    return (
+      <div className="profile-page">
+        <PostList user={user} />
+        <Post Post={post} />
+      </div>
+    );
   }
 
   if (loading) {
@@ -69,12 +76,12 @@ const Profile = () => {
     );
   }
 
-  return (
-    <div className="profile-page">
-      <ProfileHeader user={user} />
-      <Post Post={Post} />
-    </div>
-  );
+//   return (
+//     <div className="profile-page">
+//       <PostList user={user} />
+//       <Post Post={Post} />
+//     </div>
+//   );
+// };
 };
-
 export default Profile;
