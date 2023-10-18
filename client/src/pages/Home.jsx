@@ -1,5 +1,5 @@
 import Nav from '../components/Nav';
-import '../styles/home.css'
+import '../styles/home.css';
 import NewPost from '../components/NewPost';
 import TopPosts from '../components/TopRecent';
 import ProfileButton from '../components/Profilebtn';
@@ -17,7 +17,7 @@ function Home() {
             
                 <div className='topposts-container'>
                     <h1>Top Squabbles Happening Now!</h1>
-                    {/* <TopPosts /> */}
+                    <TopPosts />
                 </div> 
             </main>
         </div>

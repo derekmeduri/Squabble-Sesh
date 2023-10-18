@@ -24,6 +24,7 @@ function Signup(props) {
       });
       const token = mutationResponse.data.addUser.token;
       Auth.login(token);
+      window.location.href = '/home';
     };
   
     const handleChange = (event) => {
@@ -64,7 +65,7 @@ function Signup(props) {
                     <label htmlFor="password">Password:</label>
                     <input type="password" id="password" name="password" onChange={handleChange} />
                 </div>
-                <button type="submit" href='/home'>Sign Up</button>
+                <button type="submit">Sign Up</button>
             </form>
         </div>
     );
