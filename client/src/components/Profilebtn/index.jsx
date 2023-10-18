@@ -1,8 +1,8 @@
 function ProfileButton()  {
     return (
-    <div>
+    <li>
         <a href="/me" className="button">Profile</a>
-    </div>
+    </li>
     );
 }
 

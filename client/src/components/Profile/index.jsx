@@ -24,7 +24,6 @@ function ProfileHeader ({ userId }) {
   return (
     <div className="profile-header">
       <h1>{user.username}</h1>
-      {/* <img src={user.fighter}></img> */}
       <h2> Bio </h2>
         <p>{user.bio}</p>
       <h2> Hot Take! </h2>  
