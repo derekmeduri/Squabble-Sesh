@@ -42,14 +42,17 @@ export const ADD_USER = gql`
   `;
 
 export const NEW_POST = gql `
-mutation newPost ($postText: String!) {
+mutation newPost ( $postText: String!) {
     newPost( postText: $postText) {
         _id
+        username
         postText
         createdAt
-        postAuthor {
-          id
-          username
+        comments {
+            _id
+            username
+            commentText
+            createdAt
         }
 
     }
@@ -60,10 +63,10 @@ mutation newPost ($postText: String!) {
 // export const DELETE_POST = gql ``
 
 export const NEW_COMMENT = gql `
-mutation addComment ($commentId: ID!, $commentText: String!) {
-  addComment(commentId: $commentId, commentText: $commentText) {
+mutation newComment ($commentId: ID!, $commentText: String!) {
+  newComment(commentId: $commentId, commentText: $commentText) {
     _id
-    commentAuthor
+    username
     commentText
     createdAt
   }

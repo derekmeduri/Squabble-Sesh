@@ -11,8 +11,8 @@ export const QUERY_USER = gql`
 `;
 
 export const QUERY_USERPOSTS = gql`
-  query getPosts($userId: ID!) {
-    posts(userId: $posts) {
+  query getPosts {
+    posts {
       _id
       username
       postText
@@ -45,7 +45,7 @@ export const QUERY_SINGLE_POST = gql`
 `;
 
 export const QUERY_TOP_POSTS = gql`
-  query getTopPosts($postId: ID!) {
+  query getTopPosts {
     posts {
       _id
       username
