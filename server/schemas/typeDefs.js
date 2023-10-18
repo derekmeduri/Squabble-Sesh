@@ -25,9 +25,7 @@ const typeDefs = `
     comments: [Comment]
   }
 
-  type PostInput {
-    postText: String!
-  }
+
 
   type Comment {
     _id: ID
@@ -38,17 +36,14 @@ const typeDefs = `
 
   }
 
-  type CommentInput {
-    commentText: String!
-  }
+
 
   type Query {
     users: [User]
     user(username: String): User
     posts(username: String): [Post]
     post(postId: ID!): Post
-    comments(username: ID!): [Comment]
-    comment(commentId: ID!): Comment
+
    
     
     # Because we have the context functionality in place to check a JWT and decode its data, we can use a query that will always find and return the logged in user's data
