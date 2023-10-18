@@ -77,10 +77,11 @@ const resolvers = {
     },
     newPost: async (parent, { postText }, context) => {
       if (context.user) {
-        const post = await Post.create({
-          postText,
-          postAuthor: context.user.username,
-        });
+        const { postText } = postInput;
+        const post = new Post
+        ({ postText, postAuthor: context.user.username });
+
+        
 
         await User.findOneAndUpdate(
           { _id: context.user._id },
@@ -88,8 +89,9 @@ const resolvers = {
         );
 
         return post;
-      }
-      throw AuthenticationError;
+
+      } throw AuthenticationError;
+      
     },
     newComment: async (parent, { postId, commentText }, context) => {
       if (context.user) {

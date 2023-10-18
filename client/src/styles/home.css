@@ -1,4 +1,55 @@
+:root {
+    --purple: #67399B;
+    --red: #E33B40;
+    --orange: #F8712E;
+    --yellow: #F9DB0E;
+    --blue: #48B7CD;
+    --darkblue: navy;
+    --black: black;
+    --white: white;
+  }
+
+#root {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+
 .left-sidebar {
     display:inline-block;
-    height:fit-content
+    height:fit-content;
+
+}
+
+/* .logo-container {
+    display: inline-block;
+} */
+
+.flex-row li {
+    display: inline-block;
+    align-items: end;
+    margin: 0 10px;
+}
+
+.flex-row li a {
+    text-decoration: none;
+    color: black;
+}
+
+.main-body {
+    display: flex;
+    justify-content:space-between;
+}
+
+.main-body div{
+    width: 70%;
+}
+
+.main-body aside {
+    width: 30%;
+}
+
+.postInput {
+    padding: 20px;
+    border: 10px var(--orange);
 }

@@ -17,6 +17,7 @@ function Login(props) {
         });
         const token = mutationResponse.data.login.token;
         Auth.login(token);
+        window.location.href = '/home';
       } catch (e) {
         console.log(e);
       }
@@ -35,7 +36,7 @@ function Login(props) {
         <div className="login-container">
             <Link to="/signup">Don't have an account yet? Go to Signup</Link>
         <h1>Login</h1>
-        <form onSubmit={handleFormSubmit}>
+        <form name='login' onSubmit={handleFormSubmit}>
             <div className="form-group">
                 <label htmlFor="username">Username:</label>
                 <input type="text" id="username" name="username" onChange={handleChange} />
