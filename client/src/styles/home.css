@@ -1,12 +1,29 @@
+:root {
+    --purple: #67399B;
+    --red: #E33B40;
+    --orange: #F8712E;
+    --yellow: #F9DB0E;
+    --blue: #48B7CD;
+    --darkblue: navy;
+    --black: black;
+    --white: white;
+  }
+
+#root {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+
 .left-sidebar {
     display:inline-block;
     height:fit-content;
 
 }
 
-.logo-container {
+/* .logo-container {
     display: inline-block;
-}
+} */
 
 .flex-row li {
     display: inline-block;
@@ -30,4 +47,9 @@
 
 .main-body aside {
     width: 30%;
+}
+
+.postInput {
+    padding: 20px;
+    border: 10px var(--orange);
 }

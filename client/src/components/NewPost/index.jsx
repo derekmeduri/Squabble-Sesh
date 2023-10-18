@@ -115,8 +115,8 @@ function PostInput() {
   return (
     <form onSubmit={handleFormSubmit}>
       <label>
-        postText
-        <input type="text" name="title" />
+      <h4>Today I want to squabble over...</h4>
+        <input type="text" name="title" className="postInput"/>
       </label>
       <button type="submit">Create Post</button>
     </form>

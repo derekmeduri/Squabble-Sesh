@@ -31,6 +31,7 @@ const typeDefs = `
 
   type Comment {
     _id: ID
+    username: String
     commentText: String
     commentAuthor: String
     createdAt: String
@@ -59,11 +60,11 @@ const typeDefs = `
 
     addUser(username: String!, firstName: String!,  hotTake: String!, bio: String!, email: String!, password: String!, ): Auth
     login(username: String!, password: String!): Auth
-    newPost(postText: String!): Post
-    newComment(postId: ID!, commentText: String!): Post
+    newPost( postText: String!): Post
+    newComment(postId: ID!, commentText: String!): Comment
     removePost(postId: ID!): Post
-    removeComment(postId: ID!, commentId: ID!): Post
-    removeUser(_id: ID!): Post
+    removeComment(postId: ID!, commentId: ID!): Comment
+    removeUser(_id: ID!): User
 
 
     

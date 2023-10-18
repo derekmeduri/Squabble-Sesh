@@ -10,7 +10,7 @@ export default function Profile ({ userId }) {
   useEffect(() => {
     const fetchUserProfile = async () => {
       try {
-        const response = await axios.get(`/api/profile/${userId}`);
+        const response = await axios.get(`/profile/${userId}`);
         setUser(response.data);
       } catch (error) {
         console.error(error);
@@ -19,7 +19,7 @@ export default function Profile ({ userId }) {
 
     const fetchUserPosts = async () => {
       try {
-        const response = await axios.get(`/api/posts/${userId}`);
+        const response = await axios.get(`/posts/${userId}`);
         setPosts(response.data);
       } catch (error) {
         console.error(error);

@@ -8,7 +8,7 @@ function Header() {
 
         if (AuthService.loggedIn()) {
             return (
-                <header>
+                <div className="base-header">
                     <div className="header-container">
                         <a className="logo-container" href="/home">
                             <img width="100%" height="100%" src="../src/assets/SSLogoOnly.png" alt="Squabble Sesh Logo"></img>
@@ -25,18 +25,18 @@ function Header() {
                                 </li>
                         </ul>
                     </div>
-                </header>
+                </div>
             );
         } else {
             return (
-                <header>
+                <div className="base-header2">
                     <div className="header-container" href="/login">
                     <a className="logo-container" href="/login">
                         <img width="100%" height="100%" src="../src/assets/SSLogoOnly.png" alt="Squabble Sesh Logo"></img>
                         <p>Squabble Sesh</p>
                     </a>
                     </div>
-                </header>
+                </div>
         );
     };
   
