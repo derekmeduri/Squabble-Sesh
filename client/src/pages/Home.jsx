@@ -2,12 +2,14 @@ import Nav from '../components/Nav';
 import '../styles/home.css'
 import NewPost from '../components/NewPost';
 import TopPosts from '../components/TopRecent';
+import ProfileButton from '../components/Profilebtn';
 
 function Home() {
     return (
         <div className='home-container'>
             <Nav />
             <main className="main-home">
+                <ProfileButton />
         
                 <div className='newpost-container'>
                     <NewPost />
