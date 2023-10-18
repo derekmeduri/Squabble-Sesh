@@ -44,7 +44,7 @@ import {
             <Header />
           </header>
           
-          <div className="main-body">
+          <div className="body-main">
             <Outlet />
           </div>
 
