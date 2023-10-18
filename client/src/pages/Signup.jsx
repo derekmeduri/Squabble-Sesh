@@ -7,7 +7,8 @@ import '../styles/signup.css';
 
 function Signup(props) {
     const [formState, setFormState] = useState({ email: '', password: '' });
-    const [addUser] = useMutation(ADD_USER);
+    const [addUser, { error }] = useMutation(ADD_USER);
+    
   
     const handleFormSubmit = async (event) => {
       event.preventDefault();
@@ -19,11 +20,11 @@ function Signup(props) {
           bio: formState.bio,
           email: formState.email,
           password: formState.password,
-        // fighter: formState.fighter
         },
       });
       const token = mutationResponse.data.addUser.token;
       Auth.login(token);
+      window.location.href = '/home';
     };
   
     const handleChange = (event) => {
@@ -64,7 +65,12 @@ function Signup(props) {
                     <label htmlFor="password">Password:</label>
                     <input type="password" id="password" name="password" onChange={handleChange} />
                 </div>
-                <button type="submit" href='/home'>Sign Up</button>
+                {error ? (
+          <div>
+            <p className="error-text">Unable to create account. Please check that Password is at least 5 characters!</p>
+          </div>
+        ) : null}
+                <button type="submit">Sign Up</button>
             </form>
         </div>
     );

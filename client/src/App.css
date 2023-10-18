@@ -40,9 +40,10 @@ header, footer {
     margin-bottom: 20px var(--yellow);
 }
 
-.base-header {
+header {
+  height: 25%;
   text-align: left;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: auto auto;
 }
 
 header img {
@@ -57,8 +58,9 @@ header p {
 }
 
 .header-container {
+  height: 25%;
   display: flex;
-  
+  /* grid-template-rows: 50% 50%; */
   flex-direction: row;
 }
 
@@ -85,6 +87,7 @@ header p {
   border: 20px solid var(--purple);
   background-color: var(--purple);
   margin-bottom: 1px var(--black);
+  height: 60%;
 }
 
 h1 {
@@ -153,4 +156,8 @@ h1 {
   flex-direction:column;
   align-items: center;
   margin: 20px
+}
+
+footer {
+  height: 15%;
 }

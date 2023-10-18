@@ -1,7 +1,7 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_TOP_POSTS } from '../../utils/queries';
-
+// import NewComment from '../Comment';
 
 function TopPosts() {
   const { loading, error, data } = useQuery(QUERY_TOP_POSTS);
@@ -14,13 +14,19 @@ function TopPosts() {
   // Get the top 5 posts
   const top5Posts = sortedPosts.slice(0, 5);
   console.log(top5Posts);
+  
   return (
-    <div>
+    <div className='post-container'>
       {top5Posts.map(post => (
         <div key={post.id}>
-          <h2 key={post.username} >{post.username}</h2>
-          <p key= {post.postText} >{post.postText}</p>
-          <p key={post.comments.length} >Number of Comments: {post.comments.length}</p>
+          <h2 key={post.username} id='username'>{post.username}</h2>
+          <p key= {post.postText} id='post-text'>{post.postText}</p>
+          <p key={post.comments.length}></p>
+          {/* <div className='comment-container'>
+            <form>
+              <NewComment/>
+            </form>
+          </div> */}
         </div>
       ))}
     </div>

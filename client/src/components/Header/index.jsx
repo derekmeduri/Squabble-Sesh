@@ -1,6 +1,7 @@
 import AuthService from "../../utils/auth";
 import { useQuery } from '@apollo/client';
 import { QUERY_USER } from "../../utils/queries";
+import ProfileButton from "../Profilebtn";
 
 function Header() {
 
@@ -18,8 +19,9 @@ function Header() {
                                 <li className="mx-1">
                                     <p>Welcome</p>
                                 </li>
+                                <ProfileButton/>
                                 <li className="Logout">
-                                    <a href="/" onClick={() => AuthService.logout()}>
+                                    <a className="button" href="/" onClick={() => AuthService.logout()}>
                                     Logout
                                     </a>
                                 </li>
