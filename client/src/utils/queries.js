@@ -82,3 +82,19 @@ export const SEARCH_QUERY = gql`
     posts
   }
 `;
+
+export const QUERY_ME = gql`
+  query me {
+    me {
+      _id
+      firstName
+      username
+      posts {
+        _id
+        username
+        postText
+        createdAt
+      }
+    }
+  }
+`;
