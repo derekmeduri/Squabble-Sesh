@@ -40,7 +40,45 @@ header, footer {
     margin-bottom: 20px var(--yellow);
 }
 
-.main-body {
+header {
+  text-align: left;
+}
+
+header img {
+  width: 100px;
+  height: 100px;
+  vertical-align:middle;
+  margin-right: 10px;
+}
+
+header p {
+  text-align:left;
+}
+
+.header-container {
+  display: flex;
+  
+  flex-direction: row;
+}
+
+.header-container a {
+  flex-direction:column-reverse;
+}
+
+.header-container ul {
+  justify-content: right;
+
+}
+
+.logo-container {
+    display:flex-start;
+    text-decoration: none;
+    font-size: xx-large;
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+.body-main {
   margin: 20px var(--purple);
   padding: 20px;
   border: 20px solid var(--purple);
@@ -48,15 +86,38 @@ header, footer {
   margin-bottom: 1px var(--black);
 }
 
+h1 {
+  margin-bottom: 20px;
+}
 
+.button-container a {
+  display: flex-end;
+  gap: 20px;
+  width: 25%;
+  border: 10px var(--purple);
+  justify-content:center;
+}
 
+.button {
+  padding: 10px 60px;
+  font-size: 18px;
+  text-decoration: none;
+  color: var(--white);
+  background-color: var(--blue);
+  border: none;
+  border-radius: 5px;
+  margin: 2%;
+  cursor: pointer;
+  align-items: center;
+}
+
+.button:hover {
+  background-color: var(--orange);
+}
 
 .left-sidebar {
-  position: fixed;
-  left: 0;
-  top: 200px;
   height: 100%;
-  width: 25%; /* Adjust the width as needed */
+  width: 30%; /* Adjust the width as needed */
   background-color: var(--blue);
   color: var(--black);
   padding: 20px;
@@ -79,4 +140,12 @@ header, footer {
 
 .left-sidebar .menu-item:hover {
   background-color: var(--blue);
+}
+
+.main-home {
+  width: 70%;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  margin: 20px
 }

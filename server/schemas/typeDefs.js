@@ -18,14 +18,18 @@ const typeDefs = `
 
   type Post {
     _id: ID
+    username: String
     postText: String
     postAuthor: String
     createdAt: String
     comments: [Comment]
   }
 
+
+
   type Comment {
     _id: ID
+    username: String
     commentText: String
     commentAuthor: String
     createdAt: String
@@ -33,12 +37,13 @@ const typeDefs = `
   }
 
 
+
   type Query {
     users: [User]
-    user(username: String!): User
+    user(username: String): User
     posts(username: String): [Post]
     post(postId: ID!): Post
-    comments(commentId: ID!): Comment
+
    
     
     # Because we have the context functionality in place to check a JWT and decode its data, we can use a query that will always find and return the logged in user's data
@@ -50,11 +55,11 @@ const typeDefs = `
 
     addUser(username: String!, firstName: String!,  hotTake: String!, bio: String!, email: String!, password: String!, ): Auth
     login(username: String!, password: String!): Auth
-    addPost(postText: String!): Post
-    addComment(postId: ID!, commentText: String!): Post
+    newPost( postText: String!): Post
+    newComment(postId: ID!, commentText: String!): Comment
     removePost(postId: ID!): Post
-    removeComment(postId: ID!, commentId: ID!): Post
-    removeUser(_id: ID!): Post
+    removeComment(postId: ID!, commentId: ID!): Comment
+    removeUser(_id: ID!): User
 
 
     

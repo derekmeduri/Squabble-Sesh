@@ -5,19 +5,18 @@ import '../styles/home.scss'
 
 function Home() {
     return (
-      
-        <main className="main-home">
-            
+        <div className='home-container'>
             <Nav />
+            <main className="main-home">
         
-            {/* <div className='newpost-container'>
+            <div className='newpost-container'>
                 <NewPost />
-            </div> */}
+            </div>
             
             <h1>Top Squabbles Happening Now!</h1>
-            {/* <div className='topposts-container'>
-                <TopRecent />
-            </div>   */}
+            <div className='topposts-container'>
+                <TopPosts />
+            </div> 
         </main>
     );
 };
