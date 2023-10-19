@@ -124,6 +124,22 @@ const resolvers = {
       }
       throw AuthenticationError;
     },
+    updatePost: async (parent, { postText }, context) => {
+      if (context.user) {
+        const post = await Post.findOneAndUpdate({
+          postText,
+          postAuthor: context.user.username,
+        });
+
+        await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { post: post._id } }
+        );
+
+        return post;
+      }
+      throw AuthenticationError;
+    },
     removeComment: async (parent, { postId, commentId }, context) => {
       if (context.user) {
         return Post.findOneAndUpdate(

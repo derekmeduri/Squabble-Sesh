@@ -57,6 +57,8 @@ const typeDefs = `
     removePost(postId: ID!): Post
     removeComment(postId: ID!, commentId: ID!): Comment
     removeUser(_id: ID!): User
+    updatePost(postId: ID!, postText: String!): Post
+
 
 
     
