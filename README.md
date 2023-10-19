@@ -1,7 +1,8 @@
 # Squabble-Sesh
 
 ## The Pitch
-Social media is no new invention - it’s been a big part of our lives and is the foremost way the world interacts. But what is missing from all of these sites we have access to right now? 
+
+Social media is no new invention - it’s been a big part of our lives and is the foremost way the world interacts. But what is missing from all of these sites we have access to right now?
 
 You’re right! There isn’t enough conflict for conflict’s sake!
 
@@ -15,6 +16,8 @@ Keep it light, keep it fun, but most importantly - keep it contentious!
 Jump to the info you are interested in below!
 
 - [Installation](#installation)
+- [Deployed Link](#deployed-link)
+- [Screenshots](#screenshots)
 - [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
@@ -25,9 +28,22 @@ Jump to the info you are interested in below!
 
 # Installation
 
+to run locally, use npm install to make sure all dependencies are installed for app to work correctly. After the terminal is finished installing run npm run develop.
+
+# Deployed Link
+
+[squabblesesh](https://squabble-sesh-775df5202585.herokuapp.com/)
+
+# Screenshots
+
+![homepage](/client/public/images/homepage.png)
+![signup](/client/public/images/signup.png)
+![login](/client/public/images/login.png)
+
 # Usage
 
 # Credits
+
 Group Members for this project include:
 
 Derek Meduri: https://github.com/DerekMeduri
