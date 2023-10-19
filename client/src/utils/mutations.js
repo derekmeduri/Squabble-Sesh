@@ -58,9 +58,27 @@ mutation newPost ( $postText: String!) {
     }
 }`;
 
-// export const EDIT_POST = gql ``
+// export const EDIT_POST = gql `
+// mutation ($id: Int, $is_completed: Boolean, $postText: String) {
+//   updatePost(where: {id: {_eq: $id}}, _set: {is_completed: $is_completed, postText: $postText}) {
+//     affected_rows
+//     returning {
+//       id
+//       postText
+//       is_completed
+//     }
+//   }
+// }`
 
-// export const DELETE_POST = gql ``
+export const DELETE_POST = gql `
+mutation($id: Int) {
+  removePost(where: {id: {_eq: $id}}) {
+    affected_rows
+    returning {
+      postId
+    }
+  }
+}`
 
 export const NEW_COMMENT = gql `
 mutation newComment ($commentId: ID!, $commentText: String!) {
