@@ -8,11 +8,14 @@
   },
   "main": "server/server.js",
   "scripts": {
-    "start": "node server/server.js --ignore client",
+    "start": "node server/server.js",
+    "server": "cd server && nodemon server.js --ignore client",
+    "client": "cd client && npm start",
     "develop": "concurrently \"cd server && npm run start\" \"cd client && npm run dev\"",
     "install": "cd server && npm i && cd ../client && npm i",
     "seed": "cd server && npm run seed",
-    "build": "cd client && npm run build"
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "keywords": [],
   "authors": [
