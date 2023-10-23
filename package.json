@@ -31,8 +31,11 @@
   "dependencies": {
     "apollo-proxy-cache": "^8.1.3",
     "axios": "^1.5.1",
+    "dotenv": "^16.3.1",
     "esbuild": "^0.19.5",
     "node": "^21.0.0"
   },
-  "optionalDependencies": { "fsevents": "2.x.x" }
+  "optionalDependencies": {
+    "fsevents": "2.x.x"
+  }
 }
