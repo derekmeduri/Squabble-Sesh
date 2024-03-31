@@ -7,7 +7,7 @@ import '../styles/login.css';
 
 function Login(props) {
     const [formState, setFormState] = useState({ username: '', password: '' });
-    const [login, { error, data }] = useMutation(LOGIN);
+    const [login, { error }] = useMutation(LOGIN);
   
     const handleFormSubmit = async (event) => {
       event.preventDefault();
